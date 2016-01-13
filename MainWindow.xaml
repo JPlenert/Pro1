@@ -1,0 +1,32 @@
+﻿<Window x:Class="ocNet.Designer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ocNetDesigner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="503" Width="727">
+    <Grid>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Stretch" Width="5" Grid.Column="1"/>
+            <TreeView x:Name="treeView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0"/>
+            <TabControl x:Name="tabControl" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <!--
+                <TabItem Header="TabItem">
+                   <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                        <StackPanel x:Name="stackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                -->
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

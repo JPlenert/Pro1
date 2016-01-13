@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ocNet.Designer.TableForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ocNetDesigner"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="1" BorderBrush="Black" CornerRadius="10,10,0,0">
+            <Grid>
+                <Label x:Name="label" Content="TableID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="64,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="175"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <DataGrid x:Name="dataGrid" HorizontalAlignment="Stretch" Margin="10,53,10,0" VerticalAlignment="Top" Height="149" ContextMenuOpening="ContextMenu_ContextMenuOpening" RowHeaderWidth="20" AlternatingRowBackground="#FFCDC9C9" AlternationCount="1" CanUserResizeRows="False" AllowDrop="True" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding FieldID}" ClipboardContentBinding="{x:Null}" Header="FieldID">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding FieldID}" Value="PID">
+                                                <Setter Property="Background" Value="Green"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding FieldType}" ClipboardContentBinding="{x:Null}" Header="FieldType"/>
+                            <DataGridTextColumn Binding="{Binding Length}" ClipboardContentBinding="{x:Null}" Header="Length"/>
+                            <DataGridTextColumn Binding="{Binding Decimals}" ClipboardContentBinding="{x:Null}" Header="Decimals">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding FieldID}" Value="PID">
+                                                <Setter Property="Focusable" Value="False"/>
+                                                <Setter Property="Foreground" Value="Gray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="conInsert" Header="Insert"></MenuItem>
+                                <MenuItem x:Name="conDelete" Header="Delete"></MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </ScrollViewer>
+                <StackPanel x:Name="testPanel">
+                    
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
